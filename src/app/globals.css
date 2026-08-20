@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #040404;
+  --color-surface: #121212;
+  --color-surface-2: #161616;
+  --color-surface-3: #1d1d1d;
+  --color-body: #9aa0a6;
+  --color-title: #ffffff;
+  --color-navy: #000c60;
+  --color-violet: #3b0786;
+  --color-purple: #8001a6;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-surface-3: var(--color-surface-3);
+  --color-body: var(--color-body);
+  --color-title: var(--color-title);
+  --color-navy: var(--color-navy);
+  --color-violet: var(--color-violet);
+  --color-purple: var(--color-purple);
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-geist);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-body);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-title);
+  font-family: var(--font-heading), sans-serif;
+}
+
+.text-fade {
+  background-image: linear-gradient(90deg, var(--color-title), var(--color-body));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-brand {
+  background-image: linear-gradient(90deg, #6b8afd, var(--color-purple) 60%, #e879f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-brand {
+  background-image: linear-gradient(135deg, var(--color-navy), var(--color-violet) 55%, var(--color-purple));
+}
+
+.btn-primary {
+  font-family: var(--font-heading), sans-serif;
+  border-radius: 999px;
+  padding: 15px 26px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+    linear-gradient(135deg, var(--color-navy), var(--color-violet) 55%, var(--color-purple));
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -8px rgba(128, 1, 166, 0.55);
+}
+
+.btn-outline {
+  font-family: var(--font-heading), sans-serif;
+  border-radius: 999px;
+  padding: 13px 24px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-purple);
+  background-color: rgba(128, 1, 166, 0.08);
+}
+
+.tag-pill {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--color-body);
+}
+
+.eyebrow {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-purple);
+}
+
+.card-glow {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, var(--color-surface-2), var(--color-surface));
+  transition: border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card-glow:hover {
+  border-color: rgba(128, 1, 166, 0.55);
+  transform: translateY(-4px);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.dashed-line {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 6;
+  fill: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
